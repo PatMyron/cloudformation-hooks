@@ -2,7 +2,6 @@ import logging
 from typing import Any, MutableMapping, Optional
 
 from cloudformation_cli_python_lib import (
-    BaseHookHandlerRequest,
     HandlerErrorCode,
     Hook,
     HookInvocationPoint,
@@ -51,48 +50,3 @@ def pre_create_handler(
         # return ProgressEvent.failed(HandlerErrorCode.InternalFailure, f"was not expecting type {e}")
 
     return progress
-
-
-@hook.handler(HookInvocationPoint.UPDATE_PRE_PROVISION)
-def pre_update_handler(
-        session: Optional[SessionProxy],
-        request: BaseHookHandlerRequest,
-        callback_context: MutableMapping[str, Any],
-        type_configuration: TypeConfigurationModel
-) -> ProgressEvent:
-    target_model = request.hookContext.targetModel
-    progress: ProgressEvent = ProgressEvent(
-        status=OperationStatus.IN_PROGRESS
-    )
-    # TODO: put code here
-
-    # Example:
-    try:
-        # A Hook that does not allow a resource's encryption algorithm to be modified
-
-        # Reading the Resource Hook's target current properties and previous properties
-        resource_properties = target_model.get("resourceProperties")
-        previous_properties = target_model.get("previousResourceProperties")
-
-        if resource_properties.get("encryptionAlgorithm") != previous_properties.get("encryptionAlgorithm"):
-            progress.status = OperationStatus.FAILED
-            progress.message = "Encryption algorithm can not be changed"
-        else:
-            progress.status = OperationStatus.SUCCESS
-    except TypeError as e:
-        progress = ProgressEvent.failed(HandlerErrorCode.InternalFailure, f"was not expecting type {e}")
-
-    return progress
-
-
-@hook.handler(HookInvocationPoint.DELETE_PRE_PROVISION)
-def pre_delete_handler(
-        session: Optional[SessionProxy],
-        request: BaseHookHandlerRequest,
-        callback_context: MutableMapping[str, Any],
-        type_configuration: TypeConfigurationModel
-) -> ProgressEvent:
-    # TODO: put code here
-    return ProgressEvent(
-        status=OperationStatus.SUCCESS
-    )
