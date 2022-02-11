@@ -28,25 +28,14 @@ def pre_create_handler(
         callback_context: MutableMapping[str, Any],
         type_configuration: TypeConfigurationModel
 ) -> ProgressEvent:
-    target_model = request.hookContext.targetModel
-    progress: ProgressEvent = ProgressEvent(
-        status=OperationStatus.IN_PROGRESS
-    )
-    # TODO: put code here
-
-    # Example:
     try:
-        # Reading the Resource Hook's target properties
-        resource_properties = target_model.get("resourceProperties")
-
-        if isinstance(session, SessionProxy):
-            client = session.client("s3")
-        # Setting Status to success will signal to cfn that the hook operation is complete
-        progress.status = OperationStatus.SUCCESS
-    except TypeError as e:
-        # exceptions module lets CloudFormation know the type of failure that occurred
-        raise exceptions.InternalFailure(f"was not expecting type {e}")
-        # this can also be done by returning a failed progress event
-        # return ProgressEvent.failed(HandlerErrorCode.InternalFailure, f"was not expecting type {e}")
-
-    return progress
+        request.hookContext.targetModel['resourceProperties']['KmsMasterKeyId']
+        return ProgressEvent(
+            status = OperationStatus.SUCCESS
+        )
+    except KeyError:
+        return ProgressEvent(
+            status = OperationStatus.FAILED,
+            message = 'KmsMasterKeyId required',
+            errorCode = HandlerErrorCode.NonCompliant,
+        )
