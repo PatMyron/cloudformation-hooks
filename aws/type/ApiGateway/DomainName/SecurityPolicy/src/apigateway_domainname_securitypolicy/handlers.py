@@ -15,7 +15,7 @@ from .models import HookHandlerRequest, TypeConfigurationModel
 
 # Use this logger to forward log messages to CloudWatch Logs.
 LOG = logging.getLogger(__name__)
-TYPE_NAME = "SQS::Queue::KmsMasterKeyId"
+TYPE_NAME = "ApiGateway::DomainName::SecurityPolicy"
 
 hook = Hook(TYPE_NAME, TypeConfigurationModel)
 test_entrypoint = hook.test_entrypoint
@@ -29,7 +29,7 @@ def pre_create_handler(
         type_configuration: TypeConfigurationModel
 ) -> ProgressEvent:
     try:
-        request.hookContext.targetModel['resourceProperties']['KmsMasterKeyId']
+        request.hookContext.targetModel['resourceProperties']['SecurityPolicy']
         return ProgressEvent(
             status = OperationStatus.SUCCESS
         )

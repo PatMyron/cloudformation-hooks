@@ -1,0 +1,22 @@
+{
+    "artifact_type": "HOOK",
+    "typeName": "ApiGateway::DomainName::SecurityPolicy",
+    "language": "python37",
+    "runtime": "python3.7",
+    "entrypoint": "apigateway_domainname_securitypolicy.handlers.hook",
+    "testEntrypoint": "apigateway_domainname_securitypolicy.handlers.test_entrypoint",
+    "settings": {
+        "version": false,
+        "subparser_name": "python37",
+        "verbose": 0,
+        "force": false,
+        "type_name": "ApiGateway::DomainName::SecurityPolicy",
+        "artifact_type": "HOOK",
+        "endpoint_url": null,
+        "region": null,
+        "target_schemas": [],
+        "use_docker": true,
+        "language": "python37",
+        "protocolVersion": "2.0.0"
+    }
+}
