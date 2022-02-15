@@ -1,6 +1,6 @@
 {
     "typeName": "SQS::Queue::KmsMasterKeyId",
-    "description": "",
+    "description": "requiring property",
     "typeConfiguration": {
         "properties": {
         },

@@ -1,6 +1,6 @@
 {
     "typeName": "ApiGateway::DomainName::SecurityPolicy",
-    "description": "",
+    "description": "requiring property",
     "typeConfiguration": {
         "properties": {
         },
