@@ -8,7 +8,6 @@ from cloudformation_cli_python_lib import (
     OperationStatus,
     ProgressEvent,
     SessionProxy,
-    exceptions,
 )
 
 from .models import HookHandlerRequest, TypeConfigurationModel
