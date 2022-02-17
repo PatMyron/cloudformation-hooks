@@ -1,0 +1,22 @@
+{
+    "artifact_type": "HOOK",
+    "typeName": "KMS::Key::EnableKeyRotation",
+    "language": "python37",
+    "runtime": "python3.7",
+    "entrypoint": "kms_key_enablekeyrotation.handlers.hook",
+    "testEntrypoint": "kms_key_enablekeyrotation.handlers.test_entrypoint",
+    "settings": {
+        "version": false,
+        "subparser_name": "python37",
+        "verbose": 0,
+        "force": false,
+        "type_name": "KMS::Key::EnableKeyRotation",
+        "artifact_type": "HOOK",
+        "endpoint_url": null,
+        "region": null,
+        "target_schemas": [],
+        "use_docker": true,
+        "language": "python37",
+        "protocolVersion": "2.0.0"
+    }
+}

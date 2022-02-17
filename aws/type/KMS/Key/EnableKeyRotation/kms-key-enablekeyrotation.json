@@ -1,0 +1,18 @@
+{
+    "typeName": "KMS::Key::EnableKeyRotation",
+    "description": "requiring property",
+    "typeConfiguration": {
+        "properties": {
+        },
+        "additionalProperties": false
+    },
+    "handlers": {
+        "preCreate": {
+            "targetNames": [
+                "AWS::KMS::Key"
+            ],
+            "permissions": []
+        }
+    },
+    "additionalProperties": false
+}
