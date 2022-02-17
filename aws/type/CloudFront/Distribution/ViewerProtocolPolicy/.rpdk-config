@@ -1,0 +1,22 @@
+{
+    "artifact_type": "HOOK",
+    "typeName": "CloudFront::Distribution::ViewerProtocolPolicy",
+    "language": "python37",
+    "runtime": "python3.7",
+    "entrypoint": "cloudfront_distribution_viewerprotocolpolicy.handlers.hook",
+    "testEntrypoint": "cloudfront_distribution_viewerprotocolpolicy.handlers.test_entrypoint",
+    "settings": {
+        "version": false,
+        "subparser_name": "python37",
+        "verbose": 0,
+        "force": false,
+        "type_name": "CloudFront::Distribution::ViewerProtocolPolicy",
+        "artifact_type": "HOOK",
+        "endpoint_url": null,
+        "region": null,
+        "target_schemas": [],
+        "use_docker": true,
+        "language": "python37",
+        "protocolVersion": "2.0.0"
+    }
+}
