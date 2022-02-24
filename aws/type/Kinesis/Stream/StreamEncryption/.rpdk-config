@@ -1,0 +1,22 @@
+{
+    "artifact_type": "HOOK",
+    "typeName": "Kinesis::Stream::StreamEncryption",
+    "language": "python37",
+    "runtime": "python3.7",
+    "entrypoint": "kinesis_stream_streamencryption.handlers.hook",
+    "testEntrypoint": "kinesis_stream_streamencryption.handlers.test_entrypoint",
+    "settings": {
+        "version": false,
+        "subparser_name": "python37",
+        "verbose": 0,
+        "force": false,
+        "type_name": "Kinesis::Stream::StreamEncryption",
+        "artifact_type": "HOOK",
+        "endpoint_url": null,
+        "region": null,
+        "target_schemas": [],
+        "use_docker": true,
+        "language": "python37",
+        "protocolVersion": "2.0.0"
+    }
+}
